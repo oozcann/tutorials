@@ -14,4 +14,14 @@ public class CalculatorTest {
         assertEquals(30,resultFromCalculator);
 
     }
+
+    @Test
+    public void testCalculatorSubtractionMethod () {
+        Calculator calculator = new Calculator();
+        int resultFromCalculator = calculator.subtract(10, 20);
+
+        assertEquals(-10,resultFromCalculator);
+
+    }
+
 }
