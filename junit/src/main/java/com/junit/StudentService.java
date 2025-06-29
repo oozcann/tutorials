@@ -16,4 +16,11 @@ public class StudentService {
         studentList.add(student);
     }
 
+    public Student findById (int id) {
+        return studentList.stream()
+                .filter(student -> student.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+
 }
