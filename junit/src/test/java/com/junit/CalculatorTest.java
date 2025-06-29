@@ -1,7 +1,9 @@
 package com.junit;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIf;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,9 +15,7 @@ public class CalculatorTest {
     public void testCalculatorAddMethod () {
         Calculator calculator = new Calculator();
         int resultFromCalculator = calculator.add(10, 20);
-
         assertEquals(30,resultFromCalculator);
-
     }
 
     @Test
@@ -23,9 +23,23 @@ public class CalculatorTest {
     public void testCalculatorSubtractionMethod () {
         Calculator calculator = new Calculator();
         int resultFromCalculator = calculator.subtract(10, 20);
-
         assertEquals(-10,resultFromCalculator);
-
+    }
+    @Test
+    @Disabled("Disabled until solving bug")
+    @DisplayName("Calculator Multiply Method Testing")
+    public void testCalculatorMultiplyMethod () {
+        Calculator calculator = new Calculator();
+        int resultFromCalculator = calculator.multiply(10, 20);
+        assertEquals(200,resultFromCalculator);
+    }
+    @Test
+    @DisabledIf("com.junit.Calculator#disableTest")
+    @DisplayName("Calculator Divide Method Testing")
+    public void testCalculatorDivideMethod () {
+        Calculator calculator = new Calculator();
+        float resultFromCalculator = calculator.divide(20, 10);
+        assertEquals(2,resultFromCalculator);
     }
 
 }
