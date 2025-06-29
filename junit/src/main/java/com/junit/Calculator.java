@@ -1,7 +1,5 @@
 package com.junit;
 
-import java.lang.management.OperatingSystemMXBean;
-
 public class Calculator {
     public int add (int a, int b) {
         return a + b;
