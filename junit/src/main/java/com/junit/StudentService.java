@@ -1,5 +1,6 @@
 package com.junit;
 
+import com.junit.exception.StudentNotFounException;
 import com.junit.model.Student;
 
 import java.util.ArrayList;
@@ -21,6 +22,13 @@ public class StudentService {
                 .filter(student -> student.getId() == id)
                 .findFirst()
                 .orElse(null);
+    }
+
+    public Student findByName (String name) {
+        return studentList.stream()
+                .filter(student -> student.getName().equals(name))
+                .findFirst()
+                .orElseThrow(() -> new StudentNotFounException("Student not found"));
     }
 
 }

@@ -1,5 +1,6 @@
 package com.junit;
 
+import com.junit.exception.StudentNotFounException;
 import com.junit.model.Student;
 import org.junit.jupiter.api.Test;
 
@@ -41,8 +42,14 @@ class StudentServiceTest {
 
         assertEquals(actualStudent,studentService.findById(2));
 
+        assertThrows(StudentNotFounException.class,() -> {
+            studentService.findByName("Onur");
+        });
 
+        assertDoesNotThrow(() -> studentService.findByName("Ali Veli"));
 
     }
+
+
 
 }
