@@ -48,6 +48,9 @@ class StudentServiceTest {
 
         assertDoesNotThrow(() -> studentService.findByName("Ali Veli"));
 
+        assertSame(actualStudent,studentService.findById(2));
+        assertNotSame(actualStudent,studentService.findById(3));
+
     }
 
 
