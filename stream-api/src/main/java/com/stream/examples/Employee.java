@@ -1,4 +1,4 @@
-package com.stream;
+package com.stream.examples;
 
 public class Employee {
     private int id;
