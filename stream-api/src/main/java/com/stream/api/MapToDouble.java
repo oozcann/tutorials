@@ -6,6 +6,7 @@ import java.util.List;
 /**
  *mapToDouble, her bir öğeyi primitive double değerine dönüştürür ve sonuç olarak DoubleStream döner.
  * Yani Stream<T> → DoubleStream dönüşümü yapar.
+ * Dönen DoubleStream ile kolayca istatistiksel işlemler yapılabilir (sum(), average(), max(), vb.).
  */
 public class MapToDouble {
     public static void main(String[] args) {
