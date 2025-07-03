@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * mapToLong, stream’deki her öğeyi primitive long değerine dönüştürür ve sonuç olarak bir LongStream döner.
+ * mapToLong dönüşümünden sonra gelen LongStream şu metodları destekler: sum(), average(), min(), max(), summaryStatistics(), vs.
  */
 public class MapToLong {
     public static void main(String[] args) {
@@ -14,11 +15,12 @@ public class MapToLong {
                 new Order("ORD003", 1500L)
         );
 
-        long totalAmount = orders.stream()
+        long max = orders.stream()
                 .mapToLong(Order::getAmount)
-                .sum();
+                .summaryStatistics()
+                .getMax();
 
-        System.out.println("Total Amount: " + totalAmount);
+        System.out.println("Total Amount: " + max);
     }
 }
 class Order {
