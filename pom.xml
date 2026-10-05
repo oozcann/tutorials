@@ -11,6 +11,7 @@
     <modules>
         <module>stream-api</module>
         <module>junit</module>
+        <module>collections-framework</module>
     </modules>
 
     <properties>
