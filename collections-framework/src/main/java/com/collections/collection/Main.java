@@ -34,6 +34,7 @@ public class Main {
         names.add("Mehmet"); // throws UnsupportedOperationException
         */
 
+        /*
         // boolean remove(Object o) --> İlk eşleşeni kaldırır.
         if (players.remove("Veli")) {
             System.out.println("Veli silindi");
@@ -54,6 +55,12 @@ public class Main {
         Collection<String> names2 = List.of("Veli");
         names1.retainAll(names2);
         System.out.println(names1);
+
+        */
+
+        EqualsTestService equalsTestService = new EqualsTestService();
+        equalsTestService.run();
+
 
     }
     public static void printPlayers (Collection<String> players) {
